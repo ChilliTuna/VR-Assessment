@@ -52,9 +52,9 @@ public class TowerScript : MonoBehaviour
 
     void Attack()
     {
-        GameObject projectileVar = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject projectileVar = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        ProjectileScript projectile = projectileVar.GetComponent<ProjectileScript>();
+        Projectile projectile = projectileVar.GetComponent<Projectile>();
 
         if(projectile != null)
         {
