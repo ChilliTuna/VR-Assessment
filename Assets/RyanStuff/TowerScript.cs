@@ -58,7 +58,7 @@ public class TowerScript : MonoBehaviour
 
         if(projectile != null)
         {
-            projectile.Chase(target);
+            projectile.Chase(target, attackPower);
         }
     }
 
