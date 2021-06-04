@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         healthText.text = "Player Health: " + playerHealth;
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !gameRunning)
+        if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
         {
             StartGame();
             gameRunning = true;
