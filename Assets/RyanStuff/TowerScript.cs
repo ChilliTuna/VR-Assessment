@@ -54,7 +54,7 @@ public class TowerScript : MonoBehaviour
     {
         GameObject projectileVar = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
-        Projectile projectile = projectileVar.GetComponent<Projectile>();
+        Bullet projectile = projectileVar.GetComponent<Bullet>();
 
         if(projectile != null)
         {
