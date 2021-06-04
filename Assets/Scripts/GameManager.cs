@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    public TextMeshProUGUI roundText;
-    public TextMeshProUGUI enemyText;
-    public TextMeshProUGUI healthText;
+    public TextMeshPro roundText;
+    public TextMeshPro enemyText;
+    public TextMeshPro healthText;
 
     bool gameRunning;
 
