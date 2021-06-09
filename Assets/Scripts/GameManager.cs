@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    public TextMeshProUGUI roundText;
-    public TextMeshProUGUI enemyText;
-    public TextMeshProUGUI healthText;
+    public TextMeshPro roundText;
+    public TextMeshPro enemyText;
+    public TextMeshPro healthText;
 
     bool gameRunning;
 
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         healthText.text = "Player Health: " + playerHealth;
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && !gameRunning)
+        if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
         {
             StartGame();
             gameRunning = true;
