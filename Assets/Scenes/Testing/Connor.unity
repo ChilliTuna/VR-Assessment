@@ -1344,6 +1344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702136970}
   - component: {fileID: 1702136971}
+  - component: {fileID: 1702136972}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1388,6 +1389,21 @@ MonoBehaviour:
   roundText: {fileID: 1944501609}
   enemyText: {fileID: 2130703755}
   healthText: {fileID: 872232014}
+--- !u!114 &1702136972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702136969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba34bb54bcaed34884d56f7364fc553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandName: hand_left_renderPart_0
+  rightHandName: hand_right_renderPart_0
+  handMaterial: {fileID: 2100000, guid: 9b1cf4acad2435d41b16647ffbd0ba09, type: 2}
 --- !u!1001 &1770664710
 PrefabInstance:
   m_ObjectHideFlags: 0
