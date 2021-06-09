@@ -18,6 +18,8 @@ public class TowerScript : MonoBehaviour
 
     public GameObject projectilePrefab;
     public Transform firePoint;
+    //public Sprite attackRangeRadius;
+    public GameObject attackRadius;
 
     //How fast to rotate the tower towards an enemy
     public float towerRotationSpeed = 5f;
@@ -28,10 +30,12 @@ public class TowerScript : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SearchForTarget", 0f, towerTargetSearchRate);
+        attackRadius.transform.localScale = new Vector3(attackRange, 0.0001f, attackRange);
     }
 
     void Update()
     {
+
         if(target == null)
         {
             return;
@@ -86,11 +90,6 @@ public class TowerScript : MonoBehaviour
         {
             target = null;
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
 
