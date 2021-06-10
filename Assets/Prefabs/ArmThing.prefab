@@ -143,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretType: {fileID: 0}
   handManager: {fileID: 0}
+  grabCollider: {fileID: 0}
+  isColliding: 0
+  preferredTurret: 0
+  distanceToHand: 0
+  currentCollision: {fileID: 0}
 --- !u!1 &3041408531946012073
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662494688138687655}
   - component: {fileID: 6662494688138687654}
+  - component: {fileID: 3384351477723431419}
   m_Layer: 0
   m_Name: ArmTurret2
   m_TagString: Untagged
@@ -435,6 +441,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39431292, y: 0.22223657, z: 0.26260132}
   m_Center: {x: 0.06506989, y: -0.04388005, z: -0.0003707346}
+--- !u!114 &3384351477723431419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662494688138687648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641637624317f664d819a1ddf9293c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretType: {fileID: 0}
+  handManager: {fileID: 0}
+  grabCollider: {fileID: 0}
+  isColliding: 0
+  preferredTurret: 0
+  distanceToHand: 0
+  currentCollision: {fileID: 0}
 --- !u!1 &6662494688140976179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662494689622424929}
   - component: {fileID: 6662494689622424928}
+  - component: {fileID: 1381576743461386804}
   m_Layer: 0
   m_Name: ArmTurret3
   m_TagString: Untagged
@@ -1215,3 +1241,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.39431292, y: 0.22223657, z: 0.26260132}
   m_Center: {x: 0.06506989, y: -0.04388005, z: -0.0003707346}
+--- !u!114 &1381576743461386804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662494689622424930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641637624317f664d819a1ddf9293c92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretType: {fileID: 0}
+  handManager: {fileID: 0}
+  grabCollider: {fileID: 0}
+  isColliding: 0
+  preferredTurret: 0
+  distanceToHand: 0
+  currentCollision: {fileID: 0}

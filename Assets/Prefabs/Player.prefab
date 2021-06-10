@@ -256,6 +256,18 @@ MonoBehaviour:
   m_controller: 2
   m_parentTransform: {fileID: 0}
   m_player: {fileID: 0}
+--- !u!114 &614678986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411719439525355573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c0fd308ba132b44bd1e913c952fd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3568159070931175858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,6 +490,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1381576743461386804, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: turretType
+      value: 
+      objectReference: {fileID: 2033744221702475268, guid: fa2ecf5d902acd24abc4b0fdf3e36ff1, type: 3}
+    - target: {fileID: 1381576743461386804, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: handManager
+      value: 
+      objectReference: {fileID: 1720297209}
+    - target: {fileID: 1381576743461386804, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: grabCollider
+      value: 
+      objectReference: {fileID: 1131774003}
+    - target: {fileID: 3384351477723431419, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: turretType
+      value: 
+      objectReference: {fileID: 2033744221702475268, guid: ae34a7f6e6b3e7e418d174a051f10bce, type: 3}
+    - target: {fileID: 3384351477723431419, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: handManager
+      value: 
+      objectReference: {fileID: 1720297209}
+    - target: {fileID: 3384351477723431419, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+      propertyPath: grabCollider
+      value: 
+      objectReference: {fileID: 1131774003}
     - target: {fileID: 5251020329243813315, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: handManager
       value: 
@@ -496,3 +532,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+--- !u!1 &4411719439525355573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5376994645362887676, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
+  m_PrefabInstance: {fileID: 8621999995573267401}
+  m_PrefabAsset: {fileID: 0}

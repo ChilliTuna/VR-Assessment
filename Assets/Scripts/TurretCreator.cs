@@ -8,7 +8,26 @@ public class TurretCreator : MonoBehaviour
 
     public Collider grabCollider;
 
-    private bool prepareSpawn = false;
+    [HideInInspector]
+    public bool isColliding = false;
+
+    [HideInInspector]
+    public bool preferredTurret = false;
+
+    [HideInInspector]
+    public float distanceToHand;
+
+    [HideInInspector]
+    public Collider currentCollision;
+
+    [HideInInspector]
+    public bool isSpawnBlocked = false;
+
+    [HideInInspector]
+    public bool beingPlaced = false;
+
+    [HideInInspector]
+    public GameObject activeTurret;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,10 +39,16 @@ public class TurretCreator : MonoBehaviour
     {
         if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) > 0)
         {
-            if (prepareSpawn)
+            if (isColliding)
             {
-                MakeNewTurret();
-                prepareSpawn = false;
+                if (!isSpawnBlocked)
+                {
+                    if (preferredTurret)
+                    {
+                        MakeNewTurret();
+                        isColliding = false;
+                    }
+                }
             }
         }
     }
@@ -32,7 +57,8 @@ public class TurretCreator : MonoBehaviour
     {
         if (other == grabCollider)
         {
-            prepareSpawn = true;
+            isColliding = true;
+            currentCollision = other;
         }
     }
 
@@ -40,13 +66,14 @@ public class TurretCreator : MonoBehaviour
     {
         if (other == grabCollider)
         {
-            prepareSpawn = false;
+            isColliding = false;
+            preferredTurret = false;
         }
     }
 
     private void MakeNewTurret()
     {
-        GameObject newTurret = Instantiate(turretType);
-        newTurret.transform.position = transform.position;
+        activeTurret = Instantiate(turretType);
+        activeTurret.transform.position = transform.position;
     }
 }
