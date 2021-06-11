@@ -172,6 +172,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &319982048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -283,6 +287,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &326254389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -415,6 +423,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &538583128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -526,6 +538,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &647636934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -651,6 +667,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &674429849
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -840,6 +860,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &869233224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -965,6 +989,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1129677949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1062,6 +1090,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1176781837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1187,6 +1219,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1378270349
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1298,6 +1334,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1453372757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1395,6 +1435,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1484012194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1471,6 +1515,63 @@ Transform:
   m_Father: {fileID: 1867272706}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1658229706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7872191493629043141, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_Name
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.1968865
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32251596
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7462373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7872191493629043143, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
 --- !u!1 &1796378734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1621,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1796378737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1666,6 +1771,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1878267824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1777,6 +1886,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1899671990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1923,6 +2036,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1955389898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2135,6 +2252,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2065694537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2322,6 +2443,10 @@ MonoBehaviour:
   agent: {fileID: 0}
   end: {fileID: 0}
   health: 10
+  value: 3
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2132490593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,60 +2562,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1001 &7872191492102789797
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7872191493629043141, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_Name
-      value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7872191493629043143, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}

@@ -494,7 +494,7 @@ PrefabInstance:
     - target: {fileID: 1381576743461386804, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: turretType
       value: 
-      objectReference: {fileID: 2033744221702475268, guid: fa2ecf5d902acd24abc4b0fdf3e36ff1, type: 3}
+      objectReference: {fileID: 7872191493629043141, guid: 4d029029beb97254e8c5d7c5db40e9b6, type: 3}
     - target: {fileID: 1381576743461386804, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: handManager
       value: 
@@ -506,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 3384351477723431419, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: turretType
       value: 
-      objectReference: {fileID: 2033744221702475268, guid: ae34a7f6e6b3e7e418d174a051f10bce, type: 3}
+      objectReference: {fileID: 7872191493629043141, guid: c6e49d61f733bd147a26408d4738d1e7, type: 3}
     - target: {fileID: 3384351477723431419, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: handManager
       value: 
@@ -522,7 +522,7 @@ PrefabInstance:
     - target: {fileID: 5251020329243813315, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: turretType
       value: 
-      objectReference: {fileID: 2033744221702475268, guid: 221d99ac5e2af1845912bee68a19d5f8, type: 3}
+      objectReference: {fileID: 7872191493629043141, guid: 5d1661bd19029c94d8ef4816fd6070e3, type: 3}
     - target: {fileID: 5251020329243813315, guid: 1149ec27a8c07f240a680be7590bc527, type: 3}
       propertyPath: grabCollider
       value: 
