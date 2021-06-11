@@ -9,6 +9,7 @@ public class TowerScript : MonoBehaviour
     public float attackSpeed = 1f;
     private float attackSpeedCountdown = 0f;
     public float attackRange = 10f;
+    public float aoeRadius = 5f;
 
 
     [Header("Tower Setup Settings")]
@@ -21,13 +22,15 @@ public class TowerScript : MonoBehaviour
     //public Sprite attackRangeRadius;
     public GameObject attackRadius;
 
+    public bool isAOE = false;
     //How fast to rotate the tower towards an enemy
     public float towerRotationSpeed = 5f;
     //How often a tower performs checks of enemies in the map. **Does require more computing power the quickly you check
     public float towerTargetSearchRate = 0.5f;
 
+    
 
-    private void Start()
+    private void Awake()
     {
         InvokeRepeating("SearchForTarget", 0f, towerTargetSearchRate);
         attackRadius.transform.localScale = new Vector3(attackRange, 0.0001f, attackRange);
@@ -44,7 +47,7 @@ public class TowerScript : MonoBehaviour
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 towerRotation = Quaternion.Lerp(rotateTowerPart.rotation, lookRotation, towerRotationSpeed * Time.deltaTime).eulerAngles;
-        rotateTowerPart.rotation = Quaternion.Euler(0f, towerRotation.y, 0f);
+        rotateTowerPart.rotation = Quaternion.Euler(towerRotation.x, towerRotation.y, 0f);
 
         if(attackSpeedCountdown <= 0f)
         {
@@ -62,7 +65,7 @@ public class TowerScript : MonoBehaviour
 
         if(projectile != null)
         {
-            projectile.Chase(target, attackPower);
+            projectile.Chase(target, attackPower, isAOE, aoeRadius);
         }
     }
 
