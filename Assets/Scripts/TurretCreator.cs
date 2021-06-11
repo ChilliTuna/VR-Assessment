@@ -4,6 +4,8 @@ public class TurretCreator : MonoBehaviour
 {
     public GameObject turretType;
 
+    public GameManager gameManager;
+
     public HandManager handManager;
 
     public Collider grabCollider;
@@ -29,6 +31,8 @@ public class TurretCreator : MonoBehaviour
     [HideInInspector]
     public GameObject activeTurret;
 
+    public int cost = 0;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -45,8 +49,12 @@ public class TurretCreator : MonoBehaviour
                 {
                     if (preferredTurret)
                     {
-                        MakeNewTurret();
-                        isColliding = false;
+                        if (gameManager.currency >= cost)
+                        {
+                            MakeNewTurret();
+                            isColliding = false;
+                            gameManager.currency -= cost;
+                        }
                     }
                 }
             }

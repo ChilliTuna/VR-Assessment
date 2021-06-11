@@ -142,12 +142,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretType: {fileID: 0}
+  gameManager: {fileID: 0}
   handManager: {fileID: 0}
   grabCollider: {fileID: 0}
   isColliding: 0
   preferredTurret: 0
   distanceToHand: 0
   currentCollision: {fileID: 0}
+  isSpawnBlocked: 0
+  beingPlaced: 0
+  activeTurret: {fileID: 0}
+  cost: 15
 --- !u!1 &3041408531946012073
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,12 +459,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretType: {fileID: 0}
+  gameManager: {fileID: 0}
   handManager: {fileID: 0}
   grabCollider: {fileID: 0}
   isColliding: 0
   preferredTurret: 0
   distanceToHand: 0
   currentCollision: {fileID: 0}
+  isSpawnBlocked: 0
+  beingPlaced: 0
+  activeTurret: {fileID: 0}
+  cost: 20
 --- !u!1 &6662494688140976179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,9 +1264,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretType: {fileID: 0}
+  gameManager: {fileID: 0}
   handManager: {fileID: 0}
   grabCollider: {fileID: 0}
   isColliding: 0
   preferredTurret: 0
   distanceToHand: 0
   currentCollision: {fileID: 0}
+  isSpawnBlocked: 0
+  beingPlaced: 0
+  activeTurret: {fileID: 0}
+  cost: 30

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public int enemiesAlive;
 
+    public float currency = 0;
+
     public Transform spawnLocation;
 
     public GameObject enemyPrefab;
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     public TextMeshPro roundText;
     public TextMeshPro enemyText;
     public TextMeshPro healthText;
+    public TextMeshPro currencyText;
 
     bool gameRunning;
 
@@ -44,6 +48,7 @@ public class GameManager : MonoBehaviour
         roundText.text = "Current Round: " + rounds[0].roundNumber;
         enemyText.text = "Enemies Alive: " + enemiesAlive;
         healthText.text = "Player Health: " + playerHealth;
+        currencyText.text = "Points: " + currency;
 
 
         if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
@@ -109,9 +114,16 @@ public class GameManager : MonoBehaviour
 
             Debug.Log("Spawning Enemy");
 
-            Instantiate(enemyPrefab, spawnLocation.position, Quaternion.identity, null);
+            Enemy enemy =  Instantiate(enemyPrefab, spawnLocation.position, Quaternion.identity, null).GetComponent<Enemy>();
+            enemy.onDeath.AddListener(() => AddCurrency(enemy.value));
+
             enemyCount -= 1;
         }
+    }
+
+    public void AddCurrency(float amount)
+    {
+        currency += amount;
     }
 
     public void WaitForClearLevel()
