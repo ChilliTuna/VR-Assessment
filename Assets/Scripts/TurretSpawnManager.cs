@@ -23,20 +23,29 @@ public class TurretSpawnManager : MonoBehaviour
     {
         foreach (TurretCreator turret in turrets)
         {
-            if (turret.beingPlaced)
+            if (turret.activeTurret != null && turret.activeTurret.GetComponent<OVRGrabbable>().isActiveAndEnabled)
             {
                 currentlyPlacing = true;
-                if (!turret.activeTurret.GetComponent<OVRGrabbable>().isGrabbed)
-                {
-                    turret.beingPlaced = false;
-                    currentlyPlacing = false;
-                }
-                foreach (TurretCreator turretCreator in turrets)
-                {
-                    turretCreator.isSpawnBlocked = currentlyPlacing;
-                }
+                turret.beingPlaced = true;
+                break;
             }
+            else
+            {
+                turret.beingPlaced = false;
+                currentlyPlacing = false;
+            }
+        }
+        foreach (TurretCreator turretCreator in turrets)
+        {
+            turretCreator.isSpawnBlocked = currentlyPlacing;
+        }
+        EstablishBestTurret();
+    }
 
+    private void EstablishBestTurret()
+    {
+        foreach (TurretCreator turret in turrets)
+        {
             if (turret.isColliding)
             {
                 turret.distanceToHand = Vector3.Magnitude(turret.currentCollision.transform.position - turret.transform.position);

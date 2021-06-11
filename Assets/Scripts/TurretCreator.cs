@@ -37,7 +37,7 @@ public class TurretCreator : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) > 0)
+        if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
             if (isColliding)
             {
