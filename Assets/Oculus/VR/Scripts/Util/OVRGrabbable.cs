@@ -103,6 +103,7 @@ public class OVRGrabbable : MonoBehaviour
     public Collider[] grabPoints
     {
         get { return m_grabPoints; }
+        set { m_grabPoints = value; }
     }
 
 	/// <summary>
