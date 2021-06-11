@@ -8,6 +8,12 @@ public class TurretSpawnManager : MonoBehaviour
 
     private GameObject currentTower;
     private bool currentlyPlacing = false;
+    private bool hasBeenGrabbed = false;
+    private float heldTimer = 0;
+
+    public float minHoldTime = 1;
+
+    private Collider[] emptyArray = { };
 
     // Start is called before the first frame update
     private void Start()
@@ -21,24 +27,8 @@ public class TurretSpawnManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        foreach (TurretCreator turret in turrets)
-        {
-            if (turret.activeTurret != null && turret.activeTurret.GetComponent<OVRGrabbable>().isActiveAndEnabled)
-            {
-                currentlyPlacing = true;
-                turret.beingPlaced = true;
-                break;
-            }
-            else
-            {
-                turret.beingPlaced = false;
-                currentlyPlacing = false;
-            }
-        }
-        foreach (TurretCreator turretCreator in turrets)
-        {
-            turretCreator.isSpawnBlocked = currentlyPlacing;
-        }
+        DisableTowerMovementAfterPlacement();
+        EnsureSingleTowerCreation();
         EstablishBestTurret();
     }
 
@@ -78,6 +68,50 @@ public class TurretSpawnManager : MonoBehaviour
         else if (collidingTurrets.Count == 1)
         {
             collidingTurrets[0].preferredTurret = true;
+        }
+    }
+
+    private void EnsureSingleTowerCreation()
+    {
+        foreach (TurretCreator turret in turrets)
+        {
+            if (turret.activeTurret != null && turret.activeTurret.GetComponent<OVRGrabbable>().isActiveAndEnabled)
+            {
+                currentTower = turret.activeTurret;
+                currentlyPlacing = true;
+                turret.beingPlaced = true;
+                break;
+            }
+            else
+            {
+                turret.beingPlaced = false;
+                currentlyPlacing = false;
+            }
+        }
+        foreach (TurretCreator turretCreator in turrets)
+        {
+            turretCreator.isSpawnBlocked = currentlyPlacing;
+        }
+    }
+
+    private void DisableTowerMovementAfterPlacement()
+    {
+        if (currentTower != null)
+        {
+            if (hasBeenGrabbed && currentTower.GetComponent<OVRGrabbable>().isGrabbed == false && heldTimer >= minHoldTime)
+            {
+                currentTower.GetComponent<OVRGrabbable>().grabPoints = emptyArray;
+                currentTower.GetComponent<OVRGrabbable>().enabled = false;
+                currentTower.GetComponent<TurretPlacer>().enabled = false;
+                hasBeenGrabbed = false;
+                currentTower = null;
+                heldTimer = 0;
+            }
+            else
+            {
+                hasBeenGrabbed = true;
+                heldTimer += Time.deltaTime;
+            }
         }
     }
 }

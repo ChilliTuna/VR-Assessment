@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 5216716857047110165}
   - component: {fileID: 2612573635130373545}
   - component: {fileID: 1072969647999181906}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Tower Type 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &2033744222596623046
 GameObject:
