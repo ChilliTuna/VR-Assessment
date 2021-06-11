@@ -24,11 +24,19 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-
         if (health <= 0)
         {
             onDeath.Invoke();
             Destroy(gameObject);
+        }
+    }
+
+    public void TakeAOEDamage(Transform enemy, float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(enemy.gameObject);
         }
     }
 }
