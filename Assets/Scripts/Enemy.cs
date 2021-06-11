@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Enemy : MonoBehaviour
     public Transform end;
 
     public float health;
+    public float value = 3;
+
+    public UnityEvent onDeath;
 
     void Start()
     {
@@ -22,6 +26,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            onDeath.Invoke();
             Destroy(gameObject);
         }
     }
