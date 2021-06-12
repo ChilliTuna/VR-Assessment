@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public int playerHealth;
 
     public List<RoundData> rounds;
@@ -15,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     public int enemiesAlive;
 
+    public float currency = 0;
+
     public Transform spawnLocation;
 
     public GameObject enemyPrefab;
@@ -22,18 +22,16 @@ public class GameManager : MonoBehaviour
     public TextMeshPro roundText;
     public TextMeshPro enemyText;
     public TextMeshPro healthText;
+    public TextMeshPro currencyText;
 
-    bool gameRunning;
+    private bool gameRunning;
 
-
-    void Start()
+    private void Start()
     {
-        
     }
 
-    void Update()
-    {   
-
+    private void Update()
+    {
         if (playerHealth <= 0)
         {
             GameOver();
@@ -41,17 +39,28 @@ public class GameManager : MonoBehaviour
 
         enemiesAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        roundText.text = "Current Round: " + rounds[0].roundNumber;
-        enemyText.text = "Enemies Alive: " + enemiesAlive;
-        healthText.text = "Player Health: " + playerHealth;
-
+        if (roundText)
+        {
+            roundText.text = "Current Round: " + rounds[0].roundNumber;
+        }
+        if (enemyText)
+        {
+            enemyText.text = "Enemies Alive: " + enemiesAlive;
+        }
+        if (healthText)
+        {
+            healthText.text = "Player Health: " + playerHealth;
+        }
+        if (currencyText)
+        {
+            currencyText.text = "Points: " + currency;
+        }
 
         if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
         {
             StartGame();
             gameRunning = true;
         }
-
     }
 
     public void StartGame()
@@ -61,7 +70,6 @@ public class GameManager : MonoBehaviour
 
     public void StartNextRound()
     {
-
         Debug.Log("Starting Round " + rounds[0].roundNumber);
 
         enemyCount = rounds[0].enemyCount;
@@ -84,7 +92,6 @@ public class GameManager : MonoBehaviour
     {
         if (enemyCount <= 0)
         {
-
             Debug.Log("No enemies left to spawn");
 
             CancelInvoke("SpawnEnemy");
@@ -94,7 +101,6 @@ public class GameManager : MonoBehaviour
                 Debug.LogWarning("That was the last round");
 
                 InvokeRepeating("WaitForEnd", 0f, 1f);
-
             }
             else
             {
@@ -102,16 +108,21 @@ public class GameManager : MonoBehaviour
 
                 InvokeRepeating("WaitForClearLevel", 0f, 1f);
             }
-
         }
         else
         {
-
             Debug.Log("Spawning Enemy");
 
-            Instantiate(enemyPrefab, spawnLocation.position, Quaternion.identity, null);
+            Enemy enemy = Instantiate(enemyPrefab, spawnLocation.position, Quaternion.identity, null).GetComponent<Enemy>();
+            enemy.onDeath.AddListener(() => AddCurrency(enemy.value));
+
             enemyCount -= 1;
         }
+    }
+
+    public void AddCurrency(float amount)
+    {
+        currency += amount;
     }
 
     public void WaitForClearLevel()
@@ -120,7 +131,6 @@ public class GameManager : MonoBehaviour
         {
             CancelInvoke("WaitForClearLevel");
             Invoke("StartNextRound", 5);
-            
         }
     }
 
@@ -142,8 +152,5 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Waiting for all enemies to die or for player to die");
         }
-
-
     }
-
 }
