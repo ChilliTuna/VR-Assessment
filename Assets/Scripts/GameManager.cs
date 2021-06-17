@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        StartGame();
+        gameRunning = true;
         enemyScript = enemyPrefab.GetComponent<Enemy>();
     }
 
