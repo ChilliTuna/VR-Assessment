@@ -20,7 +20,10 @@ public class TurretSpawnManager : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            turrets.Add(transform.GetChild(i).gameObject.GetComponent<TurretCreator>());
+            if (transform.GetChild(i).gameObject.GetComponent<TurretCreator>())
+            {
+                turrets.Add(transform.GetChild(i).gameObject.GetComponent<TurretCreator>());
+            }
         }
     }
 
