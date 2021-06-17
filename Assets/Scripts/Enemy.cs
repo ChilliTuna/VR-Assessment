@@ -12,12 +12,14 @@ public class Enemy : MonoBehaviour
 
     public float health;
     public float value = 3;
+    public float movementSpeed;
 
     public UnityEvent onDeath;
 
     void Start()
     {
         end = GameObject.Find("EndTarget").transform;
+        agent.speed = movementSpeed;
         agent.SetDestination(end.position);
     }
 
