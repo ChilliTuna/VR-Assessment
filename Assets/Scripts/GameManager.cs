@@ -49,22 +49,11 @@ public class GameManager : MonoBehaviour
         enemyScript.movementSpeed = enemyMovementSpeed;
         enemiesAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (roundText)
-        {
-            roundText.text = "Current Round: " + rounds[0].roundNumber;
-        }
-        if (enemyText)
-        {
-            enemyText.text = "Enemies Alive: " + enemiesAlive;
-        }
-        if (healthText)
-        {
-            healthText.text = "Player Health: " + playerHealth;
-        }
-        if (currencyText)
-        {
-            currencyText.text = "Points: " + currency;
-        }
+        roundText.text = rounds[0].roundNumber.ToString();
+        enemyText.text = enemiesAlive.ToString();
+        healthText.text = playerHealth.ToString();
+        currencyText.text = currency.ToString();
+
 
         if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
         {

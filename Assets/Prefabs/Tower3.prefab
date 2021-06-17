@@ -409,14 +409,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 1
   attackSpeed: 1
-  attackRange: 7
-  aoeRadius: 5
+  attackRange: 2
+  aoeRadius: 3
   enemyTag: Enemy
   rotateTowerPart: {fileID: 7872191491896460175}
   projectilePrefab: {fileID: 6856370560231370390, guid: a926203c267972a4d849846d4b22da8d, type: 3}
   firePoint: {fileID: 7872191493702033567}
   attackRadiusSphere: {fileID: 7872191493490525616}
-  isAOE: 0
+  isAOE: 1
   towerRotationSpeed: 10
   towerTargetSearchRate: 0.5
 --- !u!54 &283463426
