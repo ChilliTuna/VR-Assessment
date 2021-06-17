@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     private bool gameRunning;
 
     public UnityEvent OnDeath;
+    public UnityEvent onWin;
+    public Win_LossCondition winLossScript;
 
     private void Start()
     {
@@ -106,6 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void GameWin()
     {
+        onWin.Invoke();
         Debug.LogWarning("You have won");
     }
 

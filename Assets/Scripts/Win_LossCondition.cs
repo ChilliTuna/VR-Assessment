@@ -5,27 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Win_LossCondition : MonoBehaviour
 {
-    public Sprite gameOverUI;
-    public Sprite victoryUI;
-    // Start is called before the first frame update
-    void Start()
+    public Canvas loseCanvas;
+    public Canvas victoryCanvas;
+    
+    public void LossSetup()
     {
-        
+        loseCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void VictorySetup()
     {
-        
+        victoryCanvas.gameObject.SetActive(true);
+        Time.timeScale = 0;
     }
 
-    public void LoseGame()
+    public void Restart()
     {
-        SceneManager.LoadScene("LoseScene");
+        SceneManager.LoadScene("Main_Game_Scene");
     }
 
-    public void WinGame()
+    public void MainMenu()
     {
-        SceneManager.LoadScene("VictoryScene");
+        //SceneManager.LoadScene("MainMenu");
     }
 }
