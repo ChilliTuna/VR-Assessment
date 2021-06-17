@@ -15,4 +15,4 @@ MonoBehaviour:
   roundNumber: 8
   enemyCount: 100
   spawnDelay: 1
-  enemyMoveSpeed: 2
+  enemyMoveSpeed: 1.5
