@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int enemyCount;
     public float spawnDelay;
+    public float enemyMovementSpeed;
 
     public int enemiesAlive;
 
@@ -18,11 +19,16 @@ public class GameManager : MonoBehaviour
     public Transform spawnLocation;
 
     public GameObject enemyPrefab;
+    private Enemy enemyScript;
 
     public TextMeshPro roundText;
     public TextMeshPro enemyText;
     public TextMeshPro healthText;
     public TextMeshPro currencyText;
+
+    public float gameStartCountdown = 5f;
+    private bool gameStart = false;
+    public float startRoundCountdown = 5f;
 
     private bool gameRunning;
 
@@ -30,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         StartGame();
         gameRunning = true;
+        enemyScript = enemyPrefab.GetComponent<Enemy>();
     }
 
     private void Update()
@@ -39,6 +46,7 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
+        enemyScript.movementSpeed = enemyMovementSpeed;
         enemiesAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
         if (roundText)
@@ -63,6 +71,23 @@ public class GameManager : MonoBehaviour
             StartGame();
             gameRunning = true;
         }
+
+        if(gameStartCountdown <= 0 && !gameStart)
+        {
+            StartGame();
+            gameRunning = true;
+            gameStart = true;
+        }
+
+        if(gameStartCountdown > 0)
+        {
+            gameStartCountdown -= Time.deltaTime;
+        }
+
+        if(playerHealth <= 0)
+        {
+            GameOver();
+        }
     }
 
     public void StartGame()
@@ -76,6 +101,7 @@ public class GameManager : MonoBehaviour
 
         enemyCount = rounds[0].enemyCount;
         spawnDelay = rounds[0].spawnDelay;
+        enemyMovementSpeed = rounds[0].enemyMoveSpeed;
 
         InvokeRepeating("SpawnEnemy", 1f, spawnDelay);
     }
@@ -98,7 +124,7 @@ public class GameManager : MonoBehaviour
 
             CancelInvoke("SpawnEnemy");
 
-            if (rounds.Count == 1)
+            if (rounds[0].roundNumber == 10)
             {
                 Debug.LogWarning("That was the last round");
 
@@ -132,7 +158,7 @@ public class GameManager : MonoBehaviour
         if (enemiesAlive <= 0)
         {
             CancelInvoke("WaitForClearLevel");
-            Invoke("StartNextRound", 5);
+            Invoke("StartNextRound", startRoundCountdown);
         }
     }
 

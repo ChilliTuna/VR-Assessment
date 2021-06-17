@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f2ba3e8a433e984abbc96cb458278e3, type: 3}
-  m_Name: Round Data
+  m_Name: Round 6
   m_EditorClassIdentifier: 
-  roundNumber: 1
-  enemyCount: 20
+  roundNumber: 6
+  enemyCount: 80
   spawnDelay: 1
+  enemyMoveSpeed: 2
