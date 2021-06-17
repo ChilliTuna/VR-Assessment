@@ -51,19 +51,19 @@ public class GameManager : MonoBehaviour
 
         if (roundText)
         {
-            roundText.text = "Current Round: " + rounds[0].roundNumber;
+            roundText.text = "" + rounds[0].roundNumber;
         }
         if (enemyText)
         {
-            enemyText.text = "Enemies Alive: " + enemiesAlive;
+            enemyText.text = "" + enemiesAlive;
         }
         if (healthText)
         {
-            healthText.text = "Player Health: " + playerHealth;
+            healthText.text = "" + playerHealth;
         }
         if (currencyText)
         {
-            currencyText.text = "Points: " + currency;
+            currencyText.text = "" + currency;
         }
 
         if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
