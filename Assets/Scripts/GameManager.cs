@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int enemyCount;
     public float spawnDelay;
+    public float enemyMovementSpeed;
 
     public int enemiesAlive;
 
@@ -18,16 +19,24 @@ public class GameManager : MonoBehaviour
     public Transform spawnLocation;
 
     public GameObject enemyPrefab;
+    private Enemy enemyScript;
 
     public TextMeshPro roundText;
     public TextMeshPro enemyText;
     public TextMeshPro healthText;
     public TextMeshPro currencyText;
 
+    public float gameStartCountdown = 5f;
+    private bool gameStart = false;
+    public float startRoundCountdown = 5f;
+
     private bool gameRunning;
 
     private void Start()
     {
+        StartGame();
+        gameRunning = true;
+        enemyScript = enemyPrefab.GetComponent<Enemy>();
     }
 
     private void Update()
@@ -37,29 +46,36 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
+        enemyScript.movementSpeed = enemyMovementSpeed;
         enemiesAlive = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
-        if (roundText)
-        {
-            roundText.text = "Current Round: " + rounds[0].roundNumber;
-        }
-        if (enemyText)
-        {
-            enemyText.text = "Enemies Alive: " + enemiesAlive;
-        }
-        if (healthText)
-        {
-            healthText.text = "Player Health: " + playerHealth;
-        }
-        if (currencyText)
-        {
-            currencyText.text = "Points: " + currency;
-        }
+        roundText.text = rounds[0].roundNumber.ToString();
+        enemyText.text = enemiesAlive.ToString();
+        healthText.text = playerHealth.ToString();
+        currencyText.text = currency.ToString();
+
 
         if (OVRInput.GetDown(OVRInput.Button.One) && !gameRunning)
         {
             StartGame();
             gameRunning = true;
+        }
+
+        if(gameStartCountdown <= 0 && !gameStart)
+        {
+            StartGame();
+            gameRunning = true;
+            gameStart = true;
+        }
+
+        if(gameStartCountdown > 0)
+        {
+            gameStartCountdown -= Time.deltaTime;
+        }
+
+        if(playerHealth <= 0)
+        {
+            GameOver();
         }
     }
 
@@ -74,6 +90,7 @@ public class GameManager : MonoBehaviour
 
         enemyCount = rounds[0].enemyCount;
         spawnDelay = rounds[0].spawnDelay;
+        enemyMovementSpeed = rounds[0].enemyMoveSpeed;
 
         InvokeRepeating("SpawnEnemy", 1f, spawnDelay);
     }
@@ -96,7 +113,7 @@ public class GameManager : MonoBehaviour
 
             CancelInvoke("SpawnEnemy");
 
-            if (rounds.Count == 1)
+            if (rounds[0].roundNumber == 10)
             {
                 Debug.LogWarning("That was the last round");
 
@@ -130,7 +147,7 @@ public class GameManager : MonoBehaviour
         if (enemiesAlive <= 0)
         {
             CancelInvoke("WaitForClearLevel");
-            Invoke("StartNextRound", 5);
+            Invoke("StartNextRound", startRoundCountdown);
         }
     }
 
