@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        StartGame();
+        gameRunning = true;
     }
 
     private void Update()
