@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class GameManager : MonoBehaviour
     public float startRoundCountdown = 5f;
 
     private bool gameRunning;
+
+    public UnityEvent OnDeath;
+    public UnityEvent onWin;
+    public Win_LossCondition winLossScript;
 
     private void Start()
     {
@@ -97,11 +102,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        OnDeath.Invoke();
         Debug.LogWarning("Game is over");
     }
 
     public void GameWin()
     {
+        onWin.Invoke();
         Debug.LogWarning("You have won");
     }
 
