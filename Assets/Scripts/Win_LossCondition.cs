@@ -25,8 +25,8 @@ public class Win_LossCondition : MonoBehaviour
         SceneManager.LoadScene("Main_Game_Scene");
     }
 
-    public void MainMenu()
+    public void QuitGame()
     {
-        //SceneManager.LoadScene("MainMenu");
+        Application.Quit(0);
     }
 }
