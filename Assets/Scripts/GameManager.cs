@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public int enemiesAlive;
 
-    public float currency = 0;
+    public int currency = 0;
 
     public Transform spawnLocation;
 
@@ -144,7 +144,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCurrency(float amount)
+    public void AddCurrency(int amount)
     {
         currency += amount;
     }

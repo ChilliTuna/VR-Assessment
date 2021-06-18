@@ -16,10 +16,10 @@ public class TowerScript : MonoBehaviour
     public string enemyTag = "Enemy";
     private Transform target;
     public Transform rotateTowerPart;
-
     public GameObject projectilePrefab;
     public Transform firePoint;
     public GameObject attackRadiusSphere;
+    public int cost = 0;
 
     public bool isAOE = false;
     //How fast to rotate the tower towards an enemy

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Buildable Area
+  - Tower
   layers:
   - Default
   - TransparentFX

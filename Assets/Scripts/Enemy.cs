@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public Transform end;
 
     public float health;
-    public float value = 3;
+    public int value = 3;
     public float movementSpeed;
 
     public UnityEvent onDeath;

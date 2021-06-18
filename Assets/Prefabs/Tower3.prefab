@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 283463428}
   m_Layer: 0
   m_Name: Tower3
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,6 +171,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6856370560231370390, guid: a926203c267972a4d849846d4b22da8d, type: 3}
   firePoint: {fileID: 7872191493702033567}
   attackRadiusSphere: {fileID: 7872191493490525616}
+  cost: 0
   isAOE: 1
   towerRotationSpeed: 10
   towerTargetSearchRate: 0.5

@@ -31,8 +31,6 @@ public class TurretCreator : MonoBehaviour
     [HideInInspector]
     public GameObject activeTurret;
 
-    public int cost = 0;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -49,11 +47,11 @@ public class TurretCreator : MonoBehaviour
                 {
                     if (preferredTurret)
                     {
-                        if (gameManager.currency >= cost)
+                        if (gameManager.currency >= turretType.GetComponent<TowerScript>().cost)
                         {
                             MakeNewTurret();
                             isColliding = false;
-                            gameManager.currency -= cost;
+                            gameManager.currency -= turretType.GetComponent<TowerScript>().cost;
                         }
                     }
                 }
